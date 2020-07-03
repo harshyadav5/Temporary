@@ -6,7 +6,7 @@ import App from './App';
 Enzyme.configure({adapter: new EnzymeAdapter()});
 
 /**
- * Factory function to create a shallowwrapper for the App Component
+ * Factory function to create a shllowwrapper for the App Component
  * @function setup
  * @param {object} props  component props specific to this setup 
  * @param {object} state - Initial state to setup
