@@ -1,11 +1,9 @@
 import React from 'react';
-import Enzyme, {shallow, ShallowWrapper} from 'enzyme';
-import EnzymeAdapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 
 import Congrts from './Congrts';
 import { findByTestAttr,checkProps } from './test/testUtil';
 
-Enzyme.configure({adapter : new EnzymeAdapter});
 const defaultProps = {success:false};
 
 /**
