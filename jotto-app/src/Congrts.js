@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Functional React component for congrulation message
@@ -6,7 +7,7 @@ import React from 'react';
  * @returns{JSX.Element} - Rendered Component (or null if `success` props)
  */
 
-export default (props) =>{
+const Congrts = (props) =>{
 
     if(props.success){
         return(
@@ -23,3 +24,8 @@ export default (props) =>{
         )
     }
 }
+Congrts.propTypes = {
+    success: PropTypes.bool.isRequired
+}
+
+export default Congrts;
