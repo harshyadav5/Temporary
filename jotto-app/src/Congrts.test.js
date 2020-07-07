@@ -9,7 +9,7 @@ const defaultProps = {success:false};
 /**
  * Factory function to create a ShallowWrapper for the congrts component
  * @function setUp
- * @param {*} props - Component props specifictot this setup
+ * @param {*} props - Component props specific to this setup
  * @returns {ShallowWrapper}
  */
  const setUp = (props={}) => {
