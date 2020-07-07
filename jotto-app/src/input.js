@@ -27,7 +27,9 @@ class Input extends Component{
         )
     }
 }
-const mapStateToProps = (props) => {
-    return {};
+const mapStateToProps = ({ success }) => {
+    return {
+        success: success
+    };
 }
 export default connect(mapStateToProps)(Input);

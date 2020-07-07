@@ -10,21 +10,21 @@ import Input from './input';
  * @param {object} initialState - Initial State for this setup
  * @returns {ShallowWrapper}
  */
-const setup = (initialState={}) => {
+const setup = (initialState = {}) => {
     const store = storeFactory(initialState);
-    const wrapper = shallow(<Input store={store}/>)
-    .dive()
-    .dive();
+    const wrapper = shallow(<Input store={store} />)
+      .dive()
+      .dive();
     return wrapper;
-}
+  };
 
 describe('render', () => {
     let wrapper;
-    beforeEach(() => {
-        const initialState = {success: false};
-        wrapper = setup(initialState);
-    })
     describe('word has not been guessed', () => {
+        beforeEach(() => {
+            const initialState = {success: false};
+            wrapper = setup(initialState);
+        })
         test('renders component without error', () => {
             const component  = findByTestAttr(wrapper,"component-input");
             expect(component.length).toBe(1);
@@ -39,14 +39,21 @@ describe('render', () => {
         })  
     })
     describe('word has been guessed', () => {
+        beforeEach(() => {
+            const initialState = {success: true};
+            wrapper = setup(initialState)
+        })
         test('renders component without error', () => {
-
+            const component = findByTestAttr(wrapper,"component-input");
+            expect(component.length).toBe(1);
         })
         test('does not renders input box', () => {
-
+            const component = findByTestAttr(wrapper,"input-box");
+            expect(component.length).toBe(0);
         })
-        test(' does notrenders submit button', () => {
-           
+        test(' does not renders submit button', () => {
+            const inputBox = findByTestAttr(wrapper,"submit-button");
+            expect(inputBox.length).toBe(0);
         })
     })
 })
